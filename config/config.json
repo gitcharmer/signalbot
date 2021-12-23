@@ -1,0 +1,37 @@
+{
+  "production": {
+    "sakeperpaddress": "0xeCf9e5c123a1E251E4f9E3B9800EC8ab3E5033Ed",
+    "erc20address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+    "api": "https://signal.sakeperp.fi/",
+    "bscrpcendpoint": "https://bsc-dataseed.binance.org/",
+    "bscsubgraph": "https://bsc-graphnode-api.sakeperp.fi/subgraphs/name/sakeperp/sakeperp-subgraph",
+    "websocket": "wss://signal.sakeperp.fi/websocket/",
+    "BTC": "0xCFADd8b52B0737401d8e0aFDc8Aa9194bd40BFc3",
+    "ETH": "0x97dc089519d0b341D401a4fBaC26B02a7DCd7f6b",
+    "LINK": "0x63646106faAf013d71F18c1231AE3645ADac4112",
+    "BNB": "0xa6E5976A9d79a9F9f23B94453e0D5bA44c4010D4",
+    "DOT": "0x8f35853443b880a177d232f6D9f98D5b629aA1de",
+    "DOGE": "0x9d0f3706Ce4a92d3C1529DBe0a087114cF9a4E39",
+    "USDT": "0x3EE5313BC34C1b73cE1A3dE1De57C028c76f780f",
+    "EUR": "0x1e2EF8fBE8b62a35ECCcA85656e3D24156f080a1",
+    "JPY": "0x2D4B0b01Ed7B7ff3ec59848a3fb49C6c28D49936"
+  },
+  "development": {
+    "sakeperpaddress": "0xD03c8F89dE052256AB1d840CbDe7E1E43B59a345",
+    "erc20address": "0x50Ba517d64CAa5E4fC30b8A010A92fDEEd468e9B",
+    "api": "https://signal-dev.sakeperp.fi/",
+    "bscrpcendpoint": "https://data-seed-prebsc-1-s1.binance.org:8545/",
+    "bscsubgraph": "https://bsctest-graphnode-api.sakeperp.fi/subgraphs/name/sakeperp/sakeperp-subgraph-v2",
+    "websocket": "wss://signal-dev.sakeperp.fi/websocket/",
+    "BTC": "0x5c809Be531bCB9415c26c49A59F2f11283Ba1fD1",
+    "ETH": "0x61Cb67428E4f38944EA4824B6be958Be21ABc404",
+    "LINK": "0x809844464A2967E6Be348d10878CAC6e0E1198c0",
+    "XVS": "0xeffaf0797cd725619Ad6452f18F3fc18a119a797",
+    "BNB": "0x43Bc728D3A57F485D64df21De36A7e3d8Dc8F195"
+  },
+  "PreflightCheck": {
+    "GAS_BALANCE_THRESHOLD": 0.02,
+    "INTERVAL_MIN": 50,
+    "INTERVAL_MAX": 60
+  }
+}
