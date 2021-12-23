@@ -77,9 +77,9 @@ if (privatekey) {
       message.error('bnb/busd balance is insufficient!');
     } else {
       const gasPrice = await provider.getGasPrice(); // bsc大多时候返回5000000000 (5e9)
-      console.log('gasPrice', gasPrice);
+      // console.log('gasPrice', gasPrice);
       const allowance = await erc20.functions.allowance(wallet.address, sakeperpaddress);
-      console.log('allowance', allowance);
+      // console.log('allowance', allowance);
       // 返回值为uni256的BigNumber，如果是0，用0===allowance依然false，但0==allowance则为true
       // 如果从来没approve过，则allowance为0
       const MaxUint256: BigNumber = /*#__PURE__*/ BigNumber.from(
@@ -89,10 +89,10 @@ if (privatekey) {
       const infiniteAllowance = Big(ethers.utils.formatUnits(erc20tokenaddress, decimals[0]));
       const allowanceThreshold = infiniteAllowance.div(2);
       const haveallowance = Big(ethers.utils.formatUnits(allowance[0], decimals[0]));
-      console.log('allowance', allowance);
-      console.log('haveallowance', haveallowance);
-      console.log('allowanceThreshold', allowanceThreshold);
-      console.log('haveallowance.lt(allowanceThreshold)', haveallowance.lt(allowanceThreshold));
+      // console.log('allowance', allowance);
+      // console.log('haveallowance', haveallowance);
+      // console.log('allowanceThreshold', allowanceThreshold);
+      // console.log('haveallowance.lt(allowanceThreshold)', haveallowance.lt(allowanceThreshold));
       if (haveallowance.lt(allowanceThreshold)) {
         const approveResult = await erc20.functions.approve(sakeperpaddress, MaxUint256, {
           gasPrice: gasPrice,
@@ -176,13 +176,13 @@ socket.onmessage = function () {
                   })
                   .then(function (response) {
                     const responsedata = response;
-                    console.log('response', responsedata);
-                    console.log('response.lastRecordId', responsedata.lastRecordId);
-                    console.log('recordLastRecordid', recordLastRecordid);
-                    console.log(
-                      'response.lastRecordId == recordLastRecordid',
-                      response.lastRecordId == recordLastRecordid,
-                    );
+                    // console.log('response', responsedata);
+                    // console.log('response.lastRecordId', responsedata.lastRecordId);
+                    // console.log('recordLastRecordid', recordLastRecordid);
+                    // console.log(
+                    //   'response.lastRecordId == recordLastRecordid',
+                    //   response.lastRecordId == recordLastRecordid,
+                    // );
                     if (
                       responsedata.lastRecordId &&
                       recordLastRecordid &&
@@ -209,14 +209,14 @@ socket.onmessage = function () {
                             }
                             // approve
                             (async () => {
-                              console.log('erc20', erc20);
+                              // console.log('erc20', erc20);
                               const gasPrice = await provider.getGasPrice(); // bsc大多时候返回5000000000 (5e9)
-                              console.log('gasPrice', gasPrice);
+                              // console.log('gasPrice', gasPrice);
                               const allowance = await erc20.functions.allowance(
                                 wallet.address,
                                 sakeperpaddress,
                               );
-                              console.log('allowance', allowance);
+                              // console.log('allowance', allowance);
                               // 返回值为uni256的BigNumber，如果是0，用0===allowance依然false，但0==allowance则为true
                               // 如果从来没approve过，则allowance为0
                               const MaxUint256: BigNumber = /*#__PURE__*/ BigNumber.from(
@@ -250,13 +250,13 @@ socket.onmessage = function () {
                               const haveallowance = Big(
                                 ethers.utils.formatUnits(allowance[0], decimals[0]),
                               );
-                              console.log('allowance', allowance);
-                              console.log('haveallowance', haveallowance);
-                              console.log('allowanceThreshold', allowanceThreshold);
-                              console.log(
-                                'haveallowance.lt(allowanceThreshold)',
-                                haveallowance.lt(allowanceThreshold),
-                              );
+                              // console.log('allowance', allowance);
+                              // console.log('haveallowance', haveallowance);
+                              // console.log('allowanceThreshold', allowanceThreshold);
+                              // console.log(
+                              //   'haveallowance.lt(allowanceThreshold)',
+                              //   haveallowance.lt(allowanceThreshold),
+                              // );
                               if (haveallowance.lt(allowanceThreshold)) {
                                 const approveResult = await erc20.functions.approve(
                                   sakeperpaddress,

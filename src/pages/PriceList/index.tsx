@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useIntl, FormattedMessage } from 'umi';
 import { PageContainer } from '@ant-design/pro-layout';
 import type { ProColumns, ActionType } from '@ant-design/pro-table';
@@ -7,7 +7,7 @@ import { getPriceList } from './service';
 import type { TableListItem } from './data';
 
 let tableListDataSource: TableListItem[] = [];
-console.log('getSignalList', getPriceList());
+// console.log('getSignalList', getPriceList());
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 const PriceList: React.FC = () => {
