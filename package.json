@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "author": {"name":"signal","email": "signal@163.com"},
   "main": "public/main.js",
+  "homepage": "signalbot.bitoro.site",
   "private": true,
   "description": "Signal Bot",
   "scripts": {
     "build": "umi build && npm run gh-pages",
+    "package": "umi build",
     "gh-pages": "gh-pages -d dist",
     "start": "cross-env NODE_ENV=production umi dev",
-    "package:win": "yarn build && electron-builder --win",
-    "package:linux": "yarn build && electron-builder --linux",
-    "package:mac": "yarn build && electron-builder --mac",
-    "electron:build": "yarn build && cross-env NODE_ENV=production electron dist/main.js",
+    "package:win": "yarn package && electron-builder --win",
+    "package:linux": "yarn package && electron-builder --linux",
+    "package:mac": "yarn package && electron-builder --mac",
+    "electron:build": "yarn package && cross-env NODE_ENV=production electron dist/main.js",
     "electron:dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:8000 && cross-env NODE_ENV=development electron public/main.js\""
   },
   "lint-staged": {
