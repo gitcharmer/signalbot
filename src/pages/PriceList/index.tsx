@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useIntl, FormattedMessage } from 'umi';
 import { PageContainer } from '@ant-design/pro-layout';
 import type { ProColumns, ActionType } from '@ant-design/pro-table';
@@ -34,9 +34,11 @@ const PriceList: React.FC = () => {
    * */
   const actionRef = useRef<ActionType>();
   const intl = useIntl();
+  const [load, setLoad] = useState(true);
 
   (async () => {
     tableListDataSource = await getPriceList();
+    setLoad(false);
     if (actionRef?.current) {
       await actionRef.current.reload();
     }
@@ -120,15 +122,15 @@ const PriceList: React.FC = () => {
         rowKey="key"
         options={{ density: true, fullScreen: false, reload: true, setting: true }}
         search={false}
+        loading={load}
         pagination={{
           pageSize: 10,
           // 跳转到指定的页码
           showQuickJumper: true,
         }}
         columns={columns}
-        request={(params, sorter, filter) => {
+        request={() => {
           // 表单搜索项会从 params 传入，传递给后端接口。
-          console.log(params, sorter, filter);
           return Promise.resolve({
             data: tableListDataSource,
             success: true,

@@ -1,7 +1,10 @@
 {
   "name": "signalbot",
   "version": "1.0.0",
-  "author": {"name":"signal","email": "signal@163.com"},
+  "author": {
+    "name": "signal",
+    "email": "signal@163.com"
+  },
   "main": "public/main.js",
   "homepage": "signalbot.bitoro.site",
   "private": true,

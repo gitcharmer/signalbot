@@ -1,6 +1,7 @@
 {
   "production": {
     "sakeperpaddress": "0xeCf9e5c123a1E251E4f9E3B9800EC8ab3E5033Ed",
+    "sakeperpviewer": "0x235B6050455b0F68052E47528afb00AE692967E8",
     "erc20address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
     "api": "https://signal.sakeperp.fi/",
     "bscrpcendpoint": "https://bsc-dataseed.binance.org/",
@@ -18,6 +19,7 @@
   },
   "development": {
     "sakeperpaddress": "0xD03c8F89dE052256AB1d840CbDe7E1E43B59a345",
+    "sakeperpviewer": "0xd1408f4955FAA0bA4533A82519Ceff251e547DA5",
     "erc20address": "0x50Ba517d64CAa5E4fC30b8A010A92fDEEd468e9B",
     "api": "https://signal-dev.sakeperp.fi/",
     "bscrpcendpoint": "https://data-seed-prebsc-1-s1.binance.org:8545/",

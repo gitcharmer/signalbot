@@ -36,9 +36,9 @@ const SubList: React.FC = () => {
   const actionRef = useRef<ActionType>();
   // const actionDescriptions = useRef<ActionType>();
   const [currentRow, setCurrentRow] = useState<TableListItem>();
-  const [selectedRowsState, setSelectedRows] = useState<TableListItem[]>([]);
-  const [bnb, setBnb] = useState(localStorage.getItem('bnbBalance'));
-  const [busd, setBusd] = useState(localStorage.getItem('usdtBalance'));
+  // const [bnb, setBnb] = useState(localStorage.getItem('bnbBalance'));
+  // const [busd, setBusd] = useState(localStorage.getItem('usdtBalance'));
+  const [load, setLoad] = useState(true);
 
   /**
    * @en-US International configuration
@@ -48,6 +48,7 @@ const SubList: React.FC = () => {
 
   (async () => {
     tableListDataSource = await getSignalList();
+    setLoad(false);
     if (actionRef?.current) {
       await actionRef.current.reload();
     }
@@ -56,8 +57,8 @@ const SubList: React.FC = () => {
   //setInterval
   setInterval(() => {
     (async () => {
-      setBnb(localStorage.getItem('bnbBalance'));
-      setBusd(localStorage.getItem('usdtBalance'));
+      // setBnb(localStorage.getItem('bnbBalance'));
+      // setBusd(localStorage.getItem('usdtBalance'));
       tableListDataSource = await getSignalList();
       if (actionRef.current) {
         await actionRef.current.reload();
@@ -262,7 +263,7 @@ const SubList: React.FC = () => {
       // ellipsis: true, //文字超出不换行，显示省略号，鼠标悬浮的时候可以把该字段显示全
     },
     {
-      title: '操作',
+      title: <FormattedMessage id="pages.listDetail.operate" defaultMessage="operate" />,
       dataIndex: 'option',
       valueType: 'option',
       hideInDescriptions: true,
@@ -304,15 +305,15 @@ const SubList: React.FC = () => {
   return (
     <PageContainer>
       <Card>
-        <ProDescriptions column={3}>
+        <Descriptions column={3}>
           <Descriptions.Item label="Address">
             <div style={{ width: '600px' }}>{localStorage.getItem('wallet.address')}</div>
           </Descriptions.Item>
-          <Descriptions.Item label={<div style={{ marginLeft: '139px' }}>BNB Balance</div>}>
+          {/* <Descriptions.Item label={<div style={{ marginLeft: '139px' }}>BNB Balance</div>}>
             {bnb}
           </Descriptions.Item>
-          <Descriptions.Item label="BUSD Balance">{busd}</Descriptions.Item>
-        </ProDescriptions>
+          <Descriptions.Item label="BUSD Balance">{busd}</Descriptions.Item> */}
+        </Descriptions>
       </Card>
       <ProTable<TableListItem>
         headerTitle={intl.formatMessage({
@@ -334,6 +335,7 @@ const SubList: React.FC = () => {
           showQuickJumper: true,
         }}
         columns={columns}
+        loading={load}
         request={() => {
           // 表单搜索项会从 params 传入，传递给后端接口。
           // console.log(params, sorter, filter);

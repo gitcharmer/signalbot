@@ -48,12 +48,12 @@
     path: '/list',
     component: './SubList',
   },
-  // {
-  //   name: 'list.subscribe-list',
-  //   icon: 'table',
-  //   path: '/subscribe',
-  //   component: './UnSubList',
-  // },
+  {
+    name: 'list.subscribe-list',
+    icon: 'table',
+    path: '/position',
+    component: './PositionList',
+  },
   // {
   //   name: 'list.list-detail',
   //   icon: 'table',

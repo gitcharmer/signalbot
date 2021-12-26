@@ -114,6 +114,10 @@ socket.onopen = function () {
   console.log('websocket connect');
 };
 
+socket.onclose = function () {
+  window.location.reload();
+};
+
 setInterval(function () {
   socket.send('999');
   console.log('connect to websocket server');
@@ -411,7 +415,7 @@ const loginPath = '/list';
 
 /** 获取用户信息比较慢的时候会展示一个 loading */
 export const initialStateConfig = {
-  // loading: <PageLoading />,
+  loading: <PageLoading />,
 };
 
 /**
@@ -458,6 +462,3 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
     ...initialState?.settings,
   };
 };
-function gasLimit(arg0: Big, gasLimit: any, arg2: number) {
-  throw new Error('Function not implemented.');
-}
