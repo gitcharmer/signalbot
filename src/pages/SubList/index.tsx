@@ -304,17 +304,19 @@ const SubList: React.FC = () => {
   ];
   return (
     <PageContainer>
-      <Card>
-        <Descriptions column={3}>
-          <Descriptions.Item label="Address">
-            <div style={{ width: '600px' }}>{localStorage.getItem('wallet.address')}</div>
-          </Descriptions.Item>
-          {/* <Descriptions.Item label={<div style={{ marginLeft: '139px' }}>BNB Balance</div>}>
+      {localStorage.getItem('wallet.address') && (
+        <Card>
+          <Descriptions column={3}>
+            <Descriptions.Item label="Address">
+              <div style={{ width: '600px' }}>{localStorage.getItem('wallet.address')}</div>
+            </Descriptions.Item>
+            {/* <Descriptions.Item label={<div style={{ marginLeft: '139px' }}>BNB Balance</div>}>
             {bnb}
           </Descriptions.Item>
           <Descriptions.Item label="BUSD Balance">{busd}</Descriptions.Item> */}
-        </Descriptions>
-      </Card>
+          </Descriptions>
+        </Card>
+      )}
       <ProTable<TableListItem>
         headerTitle={intl.formatMessage({
           id: 'pages.searchTable.title',
@@ -408,7 +410,6 @@ const SubList: React.FC = () => {
         updateModalVisible={updateModalVisible}
         values={currentRow || {}}
       />
-
       <Drawer
         width={800}
         bodyStyle={bodyStyle}
