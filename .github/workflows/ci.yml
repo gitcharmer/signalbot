@@ -22,16 +22,32 @@ jobs:
       - name: npm install
         run: |
           yarn
-      - name: build electron app
+      # step4: build app for mac/win/linux
+      - name: build windows app
+        if: matrix.os == 'windows-latest'
         run: |
-          yarn package
+          yarn package:win
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.github_token }}
+
+      - name: build mac app
+        if: matrix.os == 'macos-latest'
+        run: |
+          yarn package:mac
+        env:
+          github_token: ${{ secrets.github_token }}
+
+      - name: build linux app
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          yarn package:linux
+        env:
+          github_token: ${{ secrets.github_token }}
 
       # step5: cleanup artifacts in dist_electron
       - name: cleanup artifacts
         run: |
-          npx rimraf "dist_electron/!(*.exe)"
+          npx rimraf "dist_electron/!(*.exe|*.dmg|*.deb)"
       # step6: upload artifacts
       - name: upload artifacts
         uses: actions/upload-artifact@v2
@@ -46,4 +62,4 @@ jobs:
         with:
           files: 'dist_electron/**'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.github_token }}
