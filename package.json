@@ -17,7 +17,7 @@
     "package:win": "yarn build && electron-builder --win",
     "package:linux": "yarn build && electron-builder --linux",
     "package:mac": "yarn build && electron-builder --mac",
-    "package": "electron-builder --publish always",
+    "package": "yarn build && electron-builder --publish always",
     "electron:build": "yarn build && cross-env NODE_ENV=production electron dist/main.js",
     "electron:dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:8000 && cross-env NODE_ENV=development electron public/main.js\""
   },
