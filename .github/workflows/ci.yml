@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
 
     steps:
       - name: Checkout
@@ -23,22 +23,7 @@ jobs:
         run: |
           yarn
       # step4: build app for mac/win/linux
-      - name: build windows app
-        if: matrix.os == 'windows-latest'
-        run: |
-          yarn package:win
-        env:
-          GH_TOKEN: ${{ secrets.github_token }}
-
-      - name: build mac app
-        if: matrix.os == 'macos-latest'
-        run: |
-          yarn package:mac
-        env:
-          GH_TOKEN: ${{ secrets.github_token }}
-
       - name: build linux app
-        if: matrix.os == 'ubuntu-latest'
         run: |
           yarn package:linux
         env:
@@ -47,7 +32,7 @@ jobs:
       # step5: cleanup artifacts in dist_electron
       - name: cleanup artifacts
         run: |
-          npx rimraf "dist_electron/!(*.exe|*.dmg|*.deb)"
+          npx rimraf "dist_electron/!(*.deb)"
       # step6: upload artifacts
       - name: upload artifacts
         uses: actions/upload-artifact@v2
