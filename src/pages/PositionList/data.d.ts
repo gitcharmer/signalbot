@@ -2,7 +2,7 @@ export type TableListItem = {
   key?: number;
   address?: any;
   signalId?: string;
-  amount?: any;
+  entryprice?: any;
   lastRecordId?: string;
   side?: string;
   createdAt?: number;
@@ -14,6 +14,12 @@ export type TableListItem = {
   leverage?: any;
   bnbbalance?: any;
   busdbalance?: any;
+  margin?: any;
+  marginRatio?: any;
+  liq?: any;
+  pnl?: any;
+  side?: any;
+  size?: any;
 };
 
 export type TableListPagination = {

@@ -55,16 +55,16 @@ const SubList: React.FC = () => {
   })();
 
   //setInterval
-  setInterval(() => {
-    (async () => {
-      // setBnb(localStorage.getItem('bnbBalance'));
-      // setBusd(localStorage.getItem('usdtBalance'));
-      tableListDataSource = await getSignalList();
-      if (actionRef.current) {
-        await actionRef.current.reload();
-      }
-    })();
-  }, 5000);
+  // setInterval(() => {
+  //   (async () => {
+  //     // setBnb(localStorage.getItem('bnbBalance'));
+  //     // setBusd(localStorage.getItem('usdtBalance'));
+  //     tableListDataSource = await getSignalList();
+  //     if (actionRef.current) {
+  //       await actionRef.current.reload();
+  //     }
+  //   })();
+  // }, 5000);
 
   const bodyStyle = {
     fontSize: '60px',

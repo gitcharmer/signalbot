@@ -42,13 +42,13 @@ const PositionList: React.FC = () => {
     //   ellipsis: true, //文字超出不换行，显示省略号，鼠标悬浮的时候可以把该字段显示全
     // },
     {
-      title: <FormattedMessage id="pages.searchTable.coinName" defaultMessage="Status" />,
+      title: <FormattedMessage id="pages.searchTable.Currency" defaultMessage="Currency" />,
       dataIndex: 'coinName',
     },
-    {
-      title: <FormattedMessage id="pages.searchTable.quoteName" defaultMessage="Status" />,
-      dataIndex: 'quoteName',
-    },
+    // {
+    //   title: <FormattedMessage id="pages.searchTable.quoteName" defaultMessage="Status" />,
+    //   dataIndex: 'quoteName',
+    // },
     {
       title: (
         <FormattedMessage
@@ -60,12 +60,54 @@ const PositionList: React.FC = () => {
     },
     {
       title: (
+        <FormattedMessage id="pages.searchTable.updateForm.ruleName.side" defaultMessage="side" />
+      ),
+      dataIndex: 'side',
+    },
+    {
+      title: (
+        <FormattedMessage id="pages.searchTable.updateForm.ruleName.size" defaultMessage="size" />
+      ),
+      dataIndex: 'size',
+    },
+    {
+      title: (
         <FormattedMessage
           id="pages.searchTable.updateForm.ruleName.entryprice"
           defaultMessage="Status"
         />
       ),
-      dataIndex: 'amount',
+      dataIndex: 'entryprice',
+    },
+    {
+      title: (
+        <FormattedMessage
+          id="pages.searchTable.updateForm.ruleName.margin"
+          defaultMessage="margin"
+        />
+      ),
+      dataIndex: 'margin',
+    },
+    {
+      title: (
+        <FormattedMessage
+          id="pages.searchTable.updateForm.ruleName.marginRatio"
+          defaultMessage="marginRatio"
+        />
+      ),
+      dataIndex: 'marginRatio',
+    },
+    {
+      title: (
+        <FormattedMessage id="pages.searchTable.updateForm.ruleName.pnl" defaultMessage="pnl" />
+      ),
+      dataIndex: 'pnl',
+    },
+    {
+      title: (
+        <FormattedMessage id="pages.searchTable.updateForm.ruleName.liq" defaultMessage="liq" />
+      ),
+      dataIndex: 'liq',
     },
     {
       title: (

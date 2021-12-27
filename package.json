@@ -189,14 +189,7 @@
         "Categories": "P2P;Finance;Security"
       },
       "extraResources": []
-    },
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "qlcchain",
-        "repo": "signalbot"
-      }
-    ]
+    }
   },
   "gitHooks": {
     "commit-msg": "fabric verify-commit"
