@@ -1,0 +1,50 @@
+name: CI/CD For SignalBot
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+jobs:
+  build:
+    name: Build/release
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - name: npm install
+        run: |
+          yarn
+      # step4: build app for mac/win/linux
+      - name: build mac app
+        run: |
+          yarn package:mac
+        env:
+          GH_TOKEN: ${{ secrets.github_token }}
+
+      # step5: cleanup artifacts in dist_electron
+      - name: cleanup artifacts
+        run: |
+          npx rimraf "dist_electron/!(*.dmg)"
+      # step6: upload artifacts
+      - name: upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ matrix.os }}
+          path: dist_electron
+
+      # step7: create release
+      - name: release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: 'dist_electron/**'
+        env:
+          GH_TOKEN: ${{ secrets.github_token }}
