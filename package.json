@@ -140,7 +140,7 @@
       "public/main.js"
     ],
     "directories": {
-      "output": "dist-desktop"
+      "output": "dist_electron"
     },
     "dmg": {
       "window": {
