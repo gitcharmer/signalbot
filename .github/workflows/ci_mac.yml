@@ -2,7 +2,7 @@ name: SignalBot Mac
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - 'v9.*.*'
 jobs:
   build:
     name: Build/release

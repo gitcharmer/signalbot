@@ -2,7 +2,7 @@ name: SignalBot Linux
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - 'v9.*.*'
 jobs:
   build:
     name: Build/release
