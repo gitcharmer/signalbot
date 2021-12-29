@@ -162,25 +162,41 @@
       ]
     },
     "mac": {
+      "icon": "dist/icons/icon-512x512.png",
       "target": [
         "dmg"
       ],
       "type": "distribution",
-      "extraResources": [],
+      "extraResources":  {
+        "from": "./LinuxInit.json",
+        "to": "../"
+      },
       "binaries": [],
       "category": "public.app-category.finance"
     },
     "win": {
+      "icon": "dist/icons/icon-512x512.png",
       "target": [
         "nsis",
         "portable"
       ],
-      "extraResources": []
+      "extraResources":  {
+        "from": "./LinuxInit.json",
+        "to": "../"
+      }
     },
     "nsis": {
       "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    },
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./dist/icons/icon-512x512.png",
+      "uninstallerIcon": "./dist/icons/icon-512x512.png",
+      "installerHeaderIcon": "./dist/icons/icon-512x512.png",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "xxxx"
+  },
     "linux": {
       "target": [
         "deb",
@@ -189,7 +205,10 @@
       "desktop": {
         "Categories": "P2P;Finance;Security"
       },
-      "extraResources": []
+      "extraResources":  {
+        "from": "./LinuxInit.json",
+        "to": "../"
+      }
     }
   },
   "gitHooks": {

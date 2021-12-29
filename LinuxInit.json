@@ -1,8 +1,8 @@
 {
   "LinuxInit": {
     "privatekey": "",
-    "pricenum": "1",
-    "leverage": "2",
+    "pricenum": "",
+    "leverage": "",
     "bscrpcendpoint": "https://data-seed-prebsc-1-s1.binance.org:8545/"
   }
 }

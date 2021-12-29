@@ -9,11 +9,13 @@ _roadhog-api-doc
 # production
 /dist
 /dist-desktop
+/dist_electron
 # misc
 .DS_Store
 npm-debug.log*
 yarn-error.log
 dist-desktop/
+dist_electron
 
 docker-compose/
 extra/darwin/
