@@ -1,6 +1,6 @@
 {
   "name": "signalbot",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "author": {
     "name": "signal",
     "email": "signal@163.com"
@@ -187,15 +187,7 @@
     },
     "nsis": {
       "oneClick": false,
-      "perMachine": true,
-      "allowElevation": true,
-      "allowToChangeInstallationDirectory": true,
-      "installerIcon": "./dist/icons/icon-512x512.png",
-      "uninstallerIcon": "./dist/icons/icon-512x512.png",
-      "installerHeaderIcon": "./dist/icons/icon-512x512.png",
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true,
-      "shortcutName": "signalbot"
+      "allowToChangeInstallationDirectory": true
   },
     "linux": {
       "target": [
