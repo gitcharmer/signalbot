@@ -1,4 +1,4 @@
-name: CI/CD For SignalBot
+name: SignalBot Windows
 on:
   push:
     tags:

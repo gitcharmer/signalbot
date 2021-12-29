@@ -1,4 +1,4 @@
-name: CI/CD For SignalBot
+name: SignalBot Mac
 on:
   push:
     tags:

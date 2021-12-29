@@ -14,7 +14,7 @@
     "deploy": "npm run build && npm run gh-pages",
     "gh-pages": "gh-pages -d dist",
     "start": "cross-env NODE_ENV=production umi dev",
-    "package:win": "yarn build && electron-builder --win",
+    "package:win": "yarn build && electron-builder --win --publish always",
     "package:linux": "yarn build && electron-builder --linux",
     "package:mac": "yarn build && electron-builder --mac",
     "package": "yarn build && electron-builder --publish always",
@@ -130,7 +130,7 @@
   },
   "build": {
     "appId": "org.qlcchain.signalbot",
-    "buildVersion": "1.0.0",
+    "buildVersion": "2.0.0",
     "productName": "signalbot",
     "asar": true,
     "files": [
@@ -195,7 +195,7 @@
       "installerHeaderIcon": "./dist/icons/icon-512x512.png",
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "xxxx"
+      "shortcutName": "signalbot"
   },
     "linux": {
       "target": [
