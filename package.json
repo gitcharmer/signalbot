@@ -1,6 +1,6 @@
 {
   "name": "signalbot",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "author": {
     "name": "signal",
     "email": "signal@163.com"
@@ -130,7 +130,7 @@
   },
   "build": {
     "appId": "org.qlcchain.signalbot",
-    "buildVersion": "2.0.0",
+    "buildVersion": "3.0.0",
     "productName": "signalbot",
     "asar": true,
     "files": [
