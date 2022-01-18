@@ -6,7 +6,7 @@
     "email": "signal@163.com"
   },
   "main": "public/main.js",
-  "homepage": "signalbot.bitoro.site",
+  "homepage": "pngfi.site",
   "private": true,
   "description": "Signal Bot",
   "scripts": {
